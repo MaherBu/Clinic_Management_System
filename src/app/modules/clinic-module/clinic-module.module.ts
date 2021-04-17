@@ -7,6 +7,7 @@ import { ClinicDashboardComponent } from './clinic-dashboard/clinic-dashboard.co
 import { ClinicModuleComponent } from './clinic-module.component';
 import { PatientsComponent } from './patients/patients.component';
 import { AddPatientsComponent } from './add-patients/add-patients.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AddPatientsComponent } from './add-patients/add-patients.component';
   imports: [
     CommonModule,
     ClinicModuleRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    ChartsModule
   ],
   exports:[
     ClinicModuleComponent

@@ -3,10 +3,10 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
-                    <div class="card-icon"><i class="material-icons">track_changes</i>
+                    <div class="card-icon"><i class="material-icons">perm_contact_calendar</i>
                     </div>
-                    <p class="card-category">Used Space</p>
-                    <h3 class="card-title">49/50 <small>GB</small></h3>
+                    <p class="card-category">New Patients</p>
+                    <h3 class="card-title">+10<small>person</small></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats"><i class="material-icons text-danger">check</i><a href=""></a></div>
@@ -16,10 +16,10 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
-                    <div class="card-icon"><i class="material-icons">perm_contact_calendar</i>
+                    <div class="card-icon"><i class="material-icons">track_changes</i>
                     </div>
-                    <p class="card-category">Used Space</p>
-                    <h3 class="card-title">49/50 <small>GB</small></h3>
+                    <p class="card-category">New Symptoms</p>
+                    <h3 class="card-title">+2<small></small></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats"><i class="material-icons text-danger">check</i>
@@ -34,8 +34,8 @@
                 <div class="card-header card-header-warning card-header-icon">
                     <div class="card-icon"><i class="material-icons">bookmark_added</i>
                     </div>
-                    <p class="card-category">Used Space</p>
-                    <h3 class="card-title">49/50 <small>GB</small></h3>
+                    <p class="card-category">Reports of Month</p>
+                    <h3 class="card-title">4/10<small></small></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats"><i class="material-icons text-danger">check</i>
@@ -50,13 +50,99 @@
                 <div class="card-header card-header-warning card-header-icon">
                     <div class="card-icon"><i class="material-icons">flaky</i>
                     </div>
-                    <p class="card-category">Used Space</p>
-                    <h3 class="card-title">49/50 <small>GB</small></h3>
+                    <p class="card-category">Clinic DB</p>
+                    <h3 class="card-title">2K Patient<small></small></h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats"><i class="material-icons text-danger">check</i>
                         <a>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row mt-6">
+            <div class="col-lg-8 mb-lg-0 mb-0">
+                <div class="cardMath">
+                    <div class="cardMath-body p-3">
+                        <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+                            <div class="chart">
+                                <div class="chartjs-size-monitor">
+                                    <div class="chartjs-size-monitor-expand">
+                                        <div class=""></div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink">
+                                        <div class=""></div>
+                                    </div>
+                                </div>
+                                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels"
+                                    [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend"
+                                    [chartType]="barChartType" height="170"
+                                    style="display: block; width: 801px; height: 170px;" width="801"></canvas>
+                            </div>
+                        </div>
+                        <h6 class="ms-2 mt-4 mb-0"> New Users </h6>
+                        <p class="text-sm ms-2"> (<span class="font-weight-bolder">+44%</span>) Than last week </p>
+                        <div class="container border-radius-lg">
+                            <div class="row">
+                                <div class="col-3 py-3 ps-0">
+                                    <div class="d-flex mb-2">
+                                        <p class="text-xs mt-1 mb-0 font-weight-bold">Users</p>
+                                    </div>
+                                    <h4 class="font-weight-bolder">2K</h4>
+                                    <div class="progress w-75">
+                                        <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3 py-3 ps-0">
+                                    <div class="d-flex mb-2">
+                                        <p class="text-xs mt-1 mb-0 font-weight-bold">Diseases</p>
+                                    </div>
+                                    <h4 class="font-weight-bolder">+20</h4>
+                                    <div class="progress w-75">
+                                        <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3 py-3 ps-0">
+                                    <div class="d-flex mb-2">
+                                        <p class="text-xs mt-1 mb-0 font-weight-bold">Profits</p>
+                                    </div>
+                                    <h4 class="font-weight-bolder">435$</h4>
+                                    <div class="progress w-75">
+                                        <div class="progress-bar bg-dark w-80" role="progressbar" aria-valuenow=""
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3 py-3 ps-0">
+                                    <div class="d-flex mb-2">
+                                        <p class="text-xs mt-1 mb-0 font-weight-bold">Generated Reports</p>
+                                    </div>
+                                    <h4 class="font-weight-bolder">43</h4>
+                                    <div class="progress w-75">
+                                        <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="cardImage h-100 p-3">
+                    <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100"
+                        style="background-image: url('assets/images/home-assets/blue-bg.jpeg');">
+                        <span class="mask bg-gradient-dark"></span>
+                        <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
+                            <h5 class="text-white font-weight-bolder mb-4 pt-2" style="font-size: 20px;">Your Clinic
+                                Status</h5>
+                            <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is
+                                all about who take the opportunity first.</p>
+                        </div>
                     </div>
                 </div>
             </div>
