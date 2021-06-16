@@ -1,0 +1,100 @@
+.tm-mb-big {
+  margin-bottom: 60px;
+}
+.tm-mt-big {
+  margin-top: 57px;
+}
+.container {
+  max-width: 100%;
+}
+/* .container {
+  max-width: 540px;
+} */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  background-color: #4e657a;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #6d8da6;
+}
+::-webkit-scrollbar-track {
+  background: #394f62;
+}
+.custom-file-input {
+  cursor: pointer;
+}
+.custom-file-label {
+  border-radius: 0;
+}
+.custom-select {
+  height: 50px;
+  border-radius: 0;
+}
+.tm-product-img-dummy {
+  max-width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgb(98, 160, 189);
+}
+.tm-product-img-edit {
+  max-width: 100%;
+  position: relative;
+}
+.tm-product-img-edit i {
+  display: none;
+  position: absolute;
+}
+.tm-product-img-edit:hover i {
+  display: block;
+}
+.tm-upload-icon {
+  background: #455c71;
+  /* image: url('src/assets/images/fb-icon.png'); */
+  /* src: ('src/assets/images/fb-icon.png'); */
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 22px;
+}

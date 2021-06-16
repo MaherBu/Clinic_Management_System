@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
+.searchBar{
+  border: 0;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  color: #333;
+  background: #fff;
+
+}

@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { MoudlesRoutingModule } from './moudles-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule } from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { AuthModule } from './auth/auth.module';
-import {MatTableModule} from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CdkTableModule } from '@angular/cdk/table';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     RouterModule,
     MatToolbarModule,
     MatIconModule,
+    CdkTableModule,
     MatTableModule,
     MatFormFieldModule,
     AuthModule,
@@ -28,6 +30,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   ],
   exports: [
     HomePageComponent,
-  ]
+  ], 
 })
 export class MoudlesModule { }

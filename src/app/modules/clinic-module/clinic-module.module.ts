@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { ComponentsModule } from './../components/components.module';
 import { NavBarComponent } from './../components/nav-bar/nav-bar.component';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,10 @@ import { ClinicModuleComponent } from './clinic-module.component';
 import { PatientsComponent } from './patients/patients.component';
 import { AddPatientsComponent } from './add-patients/add-patients.component';
 import { ChartsModule } from 'ng2-charts';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -16,10 +21,16 @@ import { ChartsModule } from 'ng2-charts';
     CommonModule,
     ClinicModuleRoutingModule,
     ComponentsModule,
-    ChartsModule
+    ChartsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   exports:[
-    ClinicModuleComponent
+    ClinicModuleComponent,
+    MatTableModule
   ]
 })
 export class ClinicModuleModule { }
