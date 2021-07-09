@@ -11,6 +11,7 @@ import { AuthModule } from './auth/auth.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CdkTableModule } from '@angular/cdk/table';
+import { AdminModuleModule } from './admin-module/admin-module.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatFormFieldModule,
     AuthModule,
     ClinicModuleModule,
+    AdminModuleModule,
     ComponentsModule
   ],
   exports: [
