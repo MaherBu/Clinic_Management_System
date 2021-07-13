@@ -4,17 +4,34 @@ import { CommonModule } from '@angular/common';
 import { AdminModuleRoutingModule } from './admin-module-routing.module';
 import { AdminModuleComponent } from './admin-module.component';
 import { ComponentsModule } from '../components/components.module';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { ViewDoctorsComponent } from './view-doctors/view-doctors.component';
+import { MedicalCentersComponent } from './medical-centers/medical-centers.component';
+import { ChartsModule } from 'ng2-charts';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
-  declarations: [AdminModuleComponent],
+  declarations: [AdminModuleComponent, AdminDashboardComponent, AddDoctorComponent, ViewDoctorsComponent, MedicalCentersComponent],
   imports: [
     CommonModule,
     ComponentsModule,
-    AdminModuleRoutingModule
+    ChartsModule,
+    AdminModuleRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   exports:[
     AdminModuleComponent,
+    MatTableModule
   ]
 })
 export class AdminModuleModule { }

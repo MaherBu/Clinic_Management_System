@@ -1,43 +1,43 @@
 <div>
     <div class="searchBar">
-        <div class="thead">
-          <input type="text" style="float:right" (keyup)="applyFilter($event.target.value)" placeholder="search for" class="form-control-sm top-margin">
-      </div>
+        <input type="text" style="float:right" (keyup)="applyFilter($event.target.value)" placeholder="search for">
+    </div>
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column -->
-        <ng-container matColumnDef="position">
+        <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientId}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.drId}} </td>
         </ng-container>
 
         <!-- Name Column -->
-        <ng-container matColumnDef="firstName">
-            <th mat-header-cell *matHeaderCellDef> First Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientFirstName}} </td>
+        <ng-container matColumnDef="doctorName">
+            <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.drName}} </td>
         </ng-container>
 
         <!-- Weight Column -->
-        <ng-container matColumnDef="middleName">
-            <th mat-header-cell *matHeaderCellDef> Middle Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientMiddleName}} </td>
+        <ng-container matColumnDef="doctorSpeciality">
+            <th mat-header-cell *matHeaderCellDef> Doctor Speciality </th>
+            <td mat-cell *matCellDef="let element"> {{element.drSpeciality}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
-        <ng-container matColumnDef="lastName">
-            <th mat-header-cell *matHeaderCellDef> Last Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientLastName}} </td>
+        <ng-container matColumnDef="doctorUserName">
+            <th mat-header-cell *matHeaderCellDef> Doctor Username </th>
+            <td mat-cell *matCellDef="let element"> {{element.drUserName}} </td>
         </ng-container>
-        <ng-container matColumnDef="birth">
-            <th mat-header-cell *matHeaderCellDef> Birth </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientBirhdate}} </td>
+        <ng-container matColumnDef="doctorPassword">
+            <th mat-header-cell *matHeaderCellDef> Doctore Password </th>
+            <td mat-cell *matCellDef="let element"> {{element.drPassword}} </td>
         </ng-container>
-        <ng-container matColumnDef="phoneNum">
-            <th mat-header-cell *matHeaderCellDef> Phone Number </th>
-            <td mat-cell *matCellDef="let element"> {{element.patientPhoneNumber}} </td>
+        <ng-container matColumnDef="clinic">
+            <th mat-header-cell *matHeaderCellDef> Doctor Clinic </th>
+            <td mat-cell *matCellDef="let element"> {{element.clinic}} </td>
         </ng-container>
         <ng-container matColumnDef="details">
             <th mat-header-cell *matHeaderCellDef> Details </th>

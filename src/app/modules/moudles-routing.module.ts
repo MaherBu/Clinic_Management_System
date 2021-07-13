@@ -9,8 +9,6 @@ const routes: Routes = [
         redirectTo: 'home',
         pathMatch: 'full'
       }
-      // { path: 'team', component: TeamComponent },
-      // { path: 'clients', component: ClientsComponent },
 ];
 
 @NgModule({
