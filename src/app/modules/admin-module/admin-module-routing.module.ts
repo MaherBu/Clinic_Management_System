@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminModuleComponent } from './admin-module.component';
+import { DiseasesComponent } from './diseases/diseases.component';
 import { MedicalCentersComponent } from './medical-centers/medical-centers.component';
 import { ViewDoctorsComponent } from './view-doctors/view-doctors.component';
 
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'medical-centers',
         component: MedicalCentersComponent
+      },
+      {
+        path: 'disease',
+        component: DiseasesComponent
       },
     ]
   },

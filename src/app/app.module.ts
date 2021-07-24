@@ -1,6 +1,4 @@
-import { PatientsComponent } from './modules/clinic-module/patients/patients.component';
 import { MoudlesModule } from './modules/moudles.module';
-import { HomePageComponent } from './modules/home-page/home-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -29,7 +27,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     },
     HttpClient
   ],
-  // entryComponents: [PatientsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

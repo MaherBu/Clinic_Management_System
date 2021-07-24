@@ -1,0 +1,33 @@
+<div class="row bgDiv">
+    <div class="col-sm">
+        <div style="float: left;">
+            <div *ngIf="showMe">
+                <iframe [src]="getLink()" WIDTH='920' HEIGHT='640' frameborder='no' scrolling='no'
+                    allowtransparency="true" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div style="float: right; padding: 15%;">
+            <button (click)="showMe =! showMe" type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Patients</button>
+
+            <button type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Doctors</button>
+
+            <button type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Diseases</button>
+
+            <button type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Clinics</button>
+
+            <button type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Visits</button>
+
+            <button type="button" class="btn btn-outline-danger"
+                style="width: 250px; float: right; margin-bottom: 20px;">Covid-19</button>
+        </div>
+    </div>
+</div>

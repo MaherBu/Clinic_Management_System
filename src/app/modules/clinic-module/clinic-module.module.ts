@@ -12,25 +12,47 @@ import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { DataService } from 'src/app/services/data-service';
+import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PatientDetailsComponent } from './patient-details-dialog/patient-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import { AddVisitDialogComponent } from './add-visit-dialog/add-visit-dialog.component';
+import { AddSurgeryVisitDialogComponent } from './add-surgery-visit-dialog/add-surgery-visit-dialog.component';
 
 
 @NgModule({
-  declarations: [ClinicDashboardComponent, ClinicModuleComponent, PatientsComponent, AddPatientsComponent],
+  declarations: [ClinicDashboardComponent, ClinicModuleComponent, PatientsComponent, AddPatientsComponent, PatientDetailsComponent, AddVisitDialogComponent, AddSurgeryVisitDialogComponent],
   imports: [
     CommonModule,
     ClinicModuleRoutingModule,
     ComponentsModule,
     ChartsModule,
     MatTableModule,
+    MatCardModule,
+    FormsModule,      
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatIconModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule,
+    MatDialogModule,
+    MatDividerModule
   ],
   exports:[
     ClinicModuleComponent,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    MatDialogModule,
+    MatDividerModule
+  ],
+  entryComponents:[
+    PatientDetailsComponent,
+    AddVisitDialogComponent,
+    AddSurgeryVisitDialogComponent
   ]
 })
 export class ClinicModuleModule { }

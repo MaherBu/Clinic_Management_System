@@ -14,10 +14,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { DiseasesComponent } from './diseases/diseases.component';
+import { AddDiseaseDialogComponent } from './add-disease-dialog/add-disease-dialog.component';
+import { AddDiseaseSyndromesComponent } from './add-disease-syndromes/add-disease-syndromes.component';
+import { DiseaseDetailsDialogComponent } from './disease-details-dialog/disease-details-dialog.component';
 
 
 @NgModule({
-  declarations: [AdminModuleComponent, AdminDashboardComponent, AddDoctorComponent, ViewDoctorsComponent, MedicalCentersComponent],
+  declarations: [AdminModuleComponent, AdminDashboardComponent, AddDoctorComponent, ViewDoctorsComponent, MedicalCentersComponent, DiseasesComponent, AddDiseaseDialogComponent, AddDiseaseSyndromesComponent, DiseaseDetailsDialogComponent],
   imports: [
     CommonModule,
     ComponentsModule,
@@ -29,9 +33,12 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatSelectModule
   ],
-  exports:[
+  exports: [
     AdminModuleComponent,
     MatTableModule
+  ],
+  entryComponents: [
+    DiseaseDetailsDialogComponent
   ]
 })
 export class AdminModuleModule { }

@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
     if(user == "admin" && pass == "admin"){
       this.router.navigate(['/admin']);
     }
+    else if(user == "re" && pass == "re"){
+      this.router.navigate(['/reports']);
+    }
     else{
       this.router.navigate(['/clinic']);
     }

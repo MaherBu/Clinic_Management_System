@@ -12,6 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CdkTableModule } from '@angular/cdk/table';
 import { AdminModuleModule } from './admin-module/admin-module.module';
+import { FormsModule } from '@angular/forms';
+import { ReportsModuleModule } from './reports-module/reports-module.module';
+import { SafePipeModule } from 'safe-pipe';
 
 
 @NgModule({
@@ -28,10 +31,14 @@ import { AdminModuleModule } from './admin-module/admin-module.module';
     AuthModule,
     ClinicModuleModule,
     AdminModuleModule,
-    ComponentsModule
+    ReportsModuleModule,
+    ComponentsModule,
+    FormsModule,
+    SafePipeModule
   ],
   exports: [
     HomePageComponent,
+    FormsModule
   ], 
 })
 export class MoudlesModule { }

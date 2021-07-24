@@ -1,9 +1,12 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Patient } from 'src/app/models/patient-model';
 import { DataService } from 'src/app/services/data-service';
+import { PatientDetailsComponent } from '../patient-details-dialog/patient-details.component';
 
 @Component({
   selector: 'app-patients',
@@ -11,19 +14,22 @@ import { DataService } from 'src/app/services/data-service';
   styleUrls: ['./patients.component.css']
 })
 export class PatientsComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'firstName', 'middleName', 'lastName','birth','phoneNum',];
-  dataSource:any;
+  displayedColumns: string[] = ['position', 'firstName', 'middleName', 'lastName', 'birth', 'phoneNum',];
+  dataSource: any;
+  isLoading = true;
 
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService, private router: Router, private dialog: MatDialog) { }
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
+    this.isLoading = true;
     this.ds.getAllPatients().subscribe(
       (x: Patient[]) => {
+        this.isLoading = false;
         this.dataSource = new MatTableDataSource(x);
         this.dataSource.paginator = this.paginator;
         // this.dataSource.sort = this.sort;
-      });
+      }, error => this.isLoading = false);
   }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -31,6 +37,12 @@ export class PatientsComponent implements AfterViewInit {
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  openDialog(data, event): void {
+    event.stopPropagation();
+    const editDialogRef = this.dialog.open(PatientDetailsComponent, {
+      data: data
+    });
   }
 }
 

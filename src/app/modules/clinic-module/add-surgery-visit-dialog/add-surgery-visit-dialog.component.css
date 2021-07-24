@@ -1,0 +1,11 @@
+.dialog-container-custom .mat-dialog-container {
+	padding: 0;
+	background: grey;
+}
+.matDialog{
+    /* width: 100%; */
+    /* max-width: 100%; */
+    width: 700px;
+    /* height: 1500px; */
+    overflow-y: auto;  
+}
