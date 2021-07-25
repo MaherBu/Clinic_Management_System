@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { AddDoctorComponent } from './add-doctor-dialog/add-doctor.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminModuleComponent } from './admin-module.component';
 import { DiseasesComponent } from './diseases/diseases.component';

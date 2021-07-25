@@ -1,14 +1,27 @@
 table {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    min-width: 500px;
-  }
-  th.mat-header-cell {
-    text-align: left;
-    max-width: 300px;
-  }
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+  /* background-color: rgb(4, 205, 255); */
+  font-style: oblique;
+  /* justify-content: inherit; */
+  justify-content: center;
+  text-align: center !important;
+
+
+}
 .searchBar{
-  border-style: none !important;
-  border: none !important;
+  border: 0;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  color: #333;
+  background: #fff;
+}
+.mat-header-cell {
+  background: var(#333)
 }

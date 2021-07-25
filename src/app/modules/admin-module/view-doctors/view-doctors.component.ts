@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Doctors } from 'src/app/models/doctors';
 import { DataService } from 'src/app/services/data-service';
+import { AddDoctorComponent } from '../add-doctor-dialog/add-doctor.component';
 
 @Component({
   selector: 'app-view-doctors',
@@ -14,7 +16,7 @@ export class ViewDoctorsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'doctorName', 'doctorSpeciality', 'doctorUserName','doctorPassword','clinic',];
   dataSource:any;
 
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService,private dialog: MatDialog) { }
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -28,5 +30,9 @@ export class ViewDoctorsComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  openDialog(event): void {
+    event.stopPropagation();
+    const editDialogRef = this.dialog.open(AddDoctorComponent);
   }
 }

@@ -22,7 +22,7 @@ export class AddPatientsComponent implements OnInit {
   addPatient(data: Patient): void {
     this.stringifiedData = JSON.stringify({data});  
 
-    this.ds.addPatient(this.stringifiedData).subscribe(
+    this.ds.addPatients(this.stringifiedData).subscribe(
       (x) => this.stringifiedData
       );
       // this.ds.addPatients(this.stringifiedData).subscribe(
