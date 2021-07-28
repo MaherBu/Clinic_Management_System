@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Clinic } from '../models/clinics';
 import { Patient } from '../models/patient-model';
 
@@ -15,26 +15,33 @@ export class DataService {
   //   }
 
 
-  // httpHeader = {
-  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Accept' : 'application/json'})
-  // };
-  httpHeader = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest',
-      'MyClientCert': '',        // This is empty
-      'MyToken': ''              // This is empty
-
-    }), responseType: 'text' as 'json'
+  reqHeaders = {
+    headers: new HttpHeaders({ 
+      'Accept' : 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded'
+    })
   };
+  // httpHeader = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'X-Requested-With': 'XMLHttpRequest',
+  //     'MyClientCert': '',        // This is empty
+  //     'MyToken': ''              // This is empty
 
+  //   }), responseType: 'text' as 'json'
+  // };
+
+  // reqHeaders = new HttpHeaders().set('Content-Type','application/json');
+  httpHeader = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(
     private http: HttpClient
   ) { }
 
   getAllPatients(): Observable<any> {
     return this.http
-      .get('http://clinicapi.somee.com/api/Patients');
+      .get('http://www.clinicapi.somee.com/api/Patients');
   }
 
   getAllDoctors(): Observable<any> {
@@ -65,11 +72,37 @@ export class DataService {
     return this.http
       .get('http://www.clinicapi.somee.com/api/Surgeries/SurgeryLists');
   }
-  addClinic(clinic: Clinic){
+  PostClinic(clinic: Clinic): Observable<any> {
+    const formData = new FormData();
+    // formData.append('userName', clinic.userName);
+    return this.http
+      .post(
+        'http://www.clinicapi.somee.com/api/Clinics',
+        clinic,
+        // JSON.stringify(clinic),
+        this.reqHeaders
+        // {responseType: 'json'}
+      );
+  }
+  // PostTestClinic(value: String): Observable<any> {
+  //   return this.http
+  //     .post(
+  //       'https://localhost:44337/api/values',
+  //       value,
+  //       this.reqHeaders
+  //       // {responseType: 'json'}
+  //     );
+  // }
+  addClinic(clinic: Clinic): Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+      // 'Accept': 'application/json'      
+    });
     return this.http.post(
       "http://www.clinicapi.somee.com/api/Clinics",
       clinic,
-      { responseType: 'json' }
+      // {headers:this.reqHeaders}
+      {headers: headers}
     ).pipe((e) => e);
   }
   addPatient(patient: Patient): Observable<any> {
@@ -77,15 +110,26 @@ export class DataService {
       .post<Patient>(
         'http://clinicapi.somee.com/api/Patients',
         patient,
-        { responseType: 'json' },
+        {
+          headers:
+            new HttpHeaders(
+              {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'MyClientCert': '',        
+                'MyToken': ''              
+              }
+            )
+        },
       ).pipe((e) => e);
   }
   addPatients(patient: Patient): any {
-    return this.http.post('http://clinicapi.somee.com/api/patients',
-      patient, { responseType: 'json' });
-      // .toPromise().then((data: any) => {
-      //   console.log(data)
-      // });
+    return this.http.post('http://clinicapi.somee.com/api/Patients',
+      patient,
+      this.reqHeaders
+    ).toPromise().then((data: any) => {
+        console.log(data)
+    });
   }
   //   getTraders(): Observable<any> {
   //     return this.http

@@ -20,12 +20,14 @@ import { AddDoctorComponent } from './add-doctor-dialog/add-doctor.component';
 import { AddClinicDialogComponent } from './add-clinic-dialog/add-clinic-dialog.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AdminModuleComponent, AdminDashboardComponent, AddDoctorComponent, ViewDoctorsComponent, MedicalCentersComponent, DiseasesComponent, AddDiseaseDialogComponent, AddDiseaseSyndromesComponent, DiseaseDetailsDialogComponent, AddClinicDialogComponent],
   imports: [
     CommonModule,
+    FormsModule,
     ComponentsModule,
     ChartsModule,
     AdminModuleRoutingModule,

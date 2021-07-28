@@ -1,45 +1,53 @@
 <!-- <mat-dialog-container> -->
-    <mat-dialog-content class="matDialog">
-        <h2>Add Clinic</h2>
-        <mat-divider></mat-divider>
-        <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
-            <div class="row">
-                <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
-                    <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
-                        <div class="row tm-edit-product-row">
-                            <div class="col-xl col-lg col-md-12">
-                                <div class="form-group mb-3">
-                                    <label for="name">Username
-                                    </label>
-                                    <input id="patientFirstName" name="patientFirstName" type="text"
-                                        class="form-control validate" required="">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="name">Password
-                                    </label>
-                                    <input id="patientMiddleName" name="patientMiddleName" type="text"
-                                        class="form-control validate" required="">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="name">Region
-                                    </label>
-                                    <input id="patientPhoneNumber" name="patientPhoneNumber" type="number"
-                                        class="form-control validate" placeholder="0.0">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="expire_date">Open Time
-                                    </label>
-                                    <input id="expire_date" name="expire_date" type="date"
-                                        class="form-control validate hasDatepicker" data-large-mode="true">
-                                </div>
-                                <div class="form-group mb-3">
+<mat-dialog-content class="matDialog">
+    <h2>Add Clinic</h2>
+    <mat-divider></mat-divider>
+    <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row tm-edit-product-row">
+                        <div class="col-xl col-lg col-md-12">
+                            <div class="form-group mb-3">
+                                <label for="name">Username
+                                </label>
+                                <input [(ngModel)]="data.userName" id="userName" name="userName" type="text"
+                                    class="form-control validate" required="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="name">Password
+                                </label>
+                                <input [(ngModel)]="data.password" id="password" name="password" type="password"
+                                    class="form-control validate" required="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="name">Region
+                                </label>
+                                <input [(ngModel)]="data.region" id="region" name="region" type="text"
+                                    class="form-control validate">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="expire_date">Open Time
+                                </label>
+                                <input [(ngModel)]="data.clinicOpeningDate" id="clinicOpeningDate"
+                                    name="clinicOpeningDate" type="date" class="form-control validate hasDatepicker"
+                                    data-large-mode="true">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="expire_date">Close Time
+                                </label>
+                                <input [(ngModel)]="data.clinicClosingDate" id="clinicClosingDate"
+                                    name="clinicClosingDate" type="date" class="form-control validate hasDatepicker"
+                                    data-large-mode="true">
+                            </div>
+                            <!-- <div class="form-group mb-3">
                                     <label for="expire_date">Close Time
                                     </label>
                                     <input id="expire_date" name="expire_date" type="date"
                                         class="form-control validate hasDatepicker" data-large-mode="true">
-                                </div>
-                            </div>
-                            <!-- <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+                                </div> -->
+                        </div>
+                        <!-- <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
                         <div class="tm-product-img-dummy mx-auto">
                           <i class="fas fa-cloud-upload-alt tm-upload-icon" onclick="document.getElementById('fileInput').click();"></i>
                         </div>
@@ -48,18 +56,19 @@
                           <input type="button" class="btn btn-primary btn-block mx-auto" value="Choose images" onclick="document.getElementById('fileInput').click();">
                         </div>
                       </div> -->
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
-                                    Clinic</button>
-                            </div>
+                        <div class="col-12">
+                            <button (click)="addClinic()" type="submit" class="btn btn-primary btn-block"
+                                style="margin-bottom: 10%;">Add
+                                Clinic</button>
                         </div>
                     </div>
                 </div>
-    
             </div>
+
         </div>
-    </mat-dialog-content>
-    <!-- </mat-dialog-container> -->
-    <!-- <div mat-dialog-actions>
+    </div>
+</mat-dialog-content>
+<!-- </mat-dialog-container> -->
+<!-- <div mat-dialog-actions>
         <button class="btn btn-success" mat-raised-button type="submit">Update</button>
     </div> -->

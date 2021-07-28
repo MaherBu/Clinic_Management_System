@@ -9,17 +9,27 @@ import { DataService } from 'src/app/services/data-service';
   styleUrls: ['./add-visit-dialog.component.css']
 })
 export class AddVisitDialogComponent implements OnInit {
-  types$;
+  doctors$;
+  clinics$;
+  diseases$;
   constructor(
     private dialogRef: MatDialogRef<AddVisitDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Patient,
     private ds: DataService
   ) { }
-  getTypeT(): any {
+  getDoctors(): any {
     return this.ds.getDoctorsDropDownMenu();
   }
+  getClinics(): any {
+    return this.ds.getClinicsDropDownMenu();
+  }
+  getDisease(): any {
+    return this.ds.getClinicsDropDownMenu();
+  }
   ngOnInit(): void {
-    this.types$ = this.getTypeT();
+    this.doctors$ = this.getDoctors();
+    this.clinics$ = this.getClinics();
+    this.diseases$ = this.getDisease();
   }
 
 }

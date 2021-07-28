@@ -10,21 +10,9 @@
         <div class="row tm-edit-product-row">
           <div class="col-xl-6 col-lg-6 col-md-12">
             <div class="form-group mb-3">
-              <label for="name">Patient Firstname
+              <label for="name">Patient Fullname
               </label>
-              <input [(ngModel)]="data.patientFirstName" id="patientFirstName" name="patientFirstName" type="text"
-                class="form-control validate" required="">
-            </div>
-            <div class="form-group mb-3">
-              <label for="name">Patient Middle Name
-              </label>
-              <input [(ngModel)]="data.patientMiddleName" id="patientMiddleName" name="patientMiddleName" type="text"
-                class="form-control validate" required="">
-            </div>
-            <div class="form-group mb-3">
-              <label for="name">Patient Lastname
-              </label>
-              <input [(ngModel)]="data.patientLastName" id="patientLastName" name="patientLastName" type="text"
+              <input [(ngModel)]="data.patientFullName" id="patientFullName" name="patientFullName" type="text"
                 class="form-control validate" required="">
             </div>
             <div class="form-group mb-3">
@@ -42,30 +30,18 @@
             </div>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-12">
-            <form action="" class="tm-edit-product-form">
-              <div class="form-group mb-3">
-                <label for="name">Father Name
-                </label>
-                <input [(ngModel)]="data.patientFirstName" id="patientFirstName" name="patientFirstName" type="text"
-                  class="form-control validate" required="">
-              </div>
-              <div class="form-group mb-3">
-                <label for="name">Mother Name
-                </label>
-                <input [(ngModel)]="data.patientMiddleName" id="patientMiddleName" name="patientMiddleName" type="text"
-                  class="form-control validate" required="">
-              </div>
-              <div class="form-group mb-3">
-                <label for="name">Identity Number
-                </label>
-                <input [(ngModel)]="data.patientLastName" id="patientLastName" name="patientLastName" type="text"
-                  class="form-control validate" required="">
-              </div>
+            <form>
               <!-- <div class="form-group mb-3">
                     <label for="name">Patient Disease
                     </label>
                     <input id="name" name="name" type="text" class="form-control validate" required="">
                   </div> -->
+              <div class="form-group mb-3">
+                <label for="name">Identity Number
+                </label>
+                <input [(ngModel)]="data.identityNumber" id="identityNumber" name="identityNumber" type="number"
+                  class="form-control validate" required="">
+              </div>
               <div class="form-group mb-3">
                 <label for="expire_date">Date of Birth
                 </label>
@@ -73,8 +49,10 @@
                   class="form-control validate hasDatepicker" data-large-mode="true">
               </div>
               <div class="form-group mb-3">
-                <label for="description">Notes</label>
-                <textarea class="form-control validate" rows="3" required=""></textarea>
+                <label for="name">Notes
+                </label>
+                <input [(ngModel)]="data.note" id="note" name="note" type="text" class="form-control validate"
+                  required="">
               </div>
             </form>
           </div>

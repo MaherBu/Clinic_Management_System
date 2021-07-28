@@ -5,4 +5,9 @@ export class Clinic{
     clinicOpeningDate?:String;
     clinicClosingDate?:String;
     region?:String;
+    adminClinics?: [];
+    doctors?: [];
+    surgeries?: [];
+    surgeryVisits?: [];
+    visits?: [];
 }

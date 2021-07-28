@@ -14,7 +14,7 @@ import { PatientDetailsComponent } from '../patient-details-dialog/patient-detai
   styleUrls: ['./patients.component.css']
 })
 export class PatientsComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'firstName', 'middleName', 'lastName', 'birth', 'phoneNum',];
+  displayedColumns: string[] = ['position', 'fullName', 'birth', 'phoneNum','identityNum','notes'];
   dataSource: any;
   isLoading = true;
 
