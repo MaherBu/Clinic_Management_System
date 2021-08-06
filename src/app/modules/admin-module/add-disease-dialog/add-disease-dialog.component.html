@@ -1,1 +1,25 @@
-<p>add-disease-dialog works!</p>
+<mat-dialog-content class="matDialog">
+        <h2>Add Disease</h2>
+        <mat-divider></mat-divider>
+        <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                    <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                        <div class="row tm-edit-product-row">
+                            <div class="col-xl col-lg col-md">
+                                <div class="form-group mb-3">
+                                    <label for="name">Disease Name
+                                    </label>
+                                    <input [(ngModel)]="data.DiseaseName" id="DiseaseName" name="DiseaseName" type="text" class="form-control validate">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button (click)="addDisease()" type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
+                                    Visit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>

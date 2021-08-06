@@ -1,7 +1,10 @@
+import { Visit } from './../models/visit';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Clinic } from '../models/clinics';
+import { Diseases } from '../models/diseases';
+import { Doctors } from '../models/doctors';
 import { Patient } from '../models/patient-model';
 
 @Injectable({
@@ -16,8 +19,8 @@ export class DataService {
 
 
   reqHeaders = {
-    headers: new HttpHeaders({ 
-      'Accept' : 'application/json',
+    headers: new HttpHeaders({
+      'Accept': '*/*',
       'Content-Type': 'application/x-www-form-urlencoded'
     })
   };
@@ -39,9 +42,9 @@ export class DataService {
     private http: HttpClient
   ) { }
 
-  getAllPatients(): Observable<any> {
+  getAllPatients(clinicId:String): Observable<any> {
     return this.http
-      .get('http://www.clinicapi.somee.com/api/Patients');
+      .get('http://www.clinicapi.somee.com/api/Clinics/ClinicPatients/?ClinicId=' + clinicId);
   }
 
   getAllDoctors(): Observable<any> {
@@ -52,7 +55,19 @@ export class DataService {
     return this.http
       .get('http://clinicapi.somee.com/api/Clinics');
   }
-  getAllDisease(): Observable<any> {
+  getClinicCounts(): any {
+    return this.http
+      .get('http://clinicapi.somee.com/api/Clinics/count').toPromise();
+  }
+  getDiseaseCounts(): any {
+    return this.http
+      .get('http://clinicapi.somee.com/api/Diseases/count').toPromise();
+  }
+  getPatientCounts(): any {
+    return this.http
+      .get('http://clinicapi.somee.com/api/Patients/count').toPromise();
+  }
+  getAllDisease(): any {
     return this.http
       .get('http://clinicapi.somee.com/api/Diseases');
   }
@@ -72,64 +87,54 @@ export class DataService {
     return this.http
       .get('http://www.clinicapi.somee.com/api/Surgeries/SurgeryLists');
   }
-  PostClinic(clinic: Clinic): Observable<any> {
-    const formData = new FormData();
-    // formData.append('userName', clinic.userName);
-    return this.http
-      .post(
-        'http://www.clinicapi.somee.com/api/Clinics',
-        clinic,
-        // JSON.stringify(clinic),
-        this.reqHeaders
-        // {responseType: 'json'}
-      );
-  }
-  // PostTestClinic(value: String): Observable<any> {
-  //   return this.http
-  //     .post(
-  //       'https://localhost:44337/api/values',
-  //       value,
-  //       this.reqHeaders
-  //       // {responseType: 'json'}
-  //     );
-  // }
-  addClinic(clinic: Clinic): Observable<any>{
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json; charset=utf-8',
-      // 'Accept': 'application/json'      
-    });
+  addClinic(clinic: Clinic): any {
     return this.http.post(
       "http://www.clinicapi.somee.com/api/Clinics",
       clinic,
-      // {headers:this.reqHeaders}
-      {headers: headers}
-    ).pipe((e) => e);
-  }
-  addPatient(patient: Patient): Observable<any> {
-    return this.http
-      .post<Patient>(
-        'http://clinicapi.somee.com/api/Patients',
-        patient,
-        {
-          headers:
-            new HttpHeaders(
-              {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-                'MyClientCert': '',        
-                'MyToken': ''              
-              }
-            )
-        },
-      ).pipe((e) => e);
+      { responseType: "json" }
+    ).toPromise();
   }
   addPatients(patient: Patient): any {
-    return this.http.post('http://clinicapi.somee.com/api/Patients',
+    return this.http.post('http://www.clinicapi.somee.com/api/patients',
       patient,
-      this.reqHeaders
-    ).toPromise().then((data: any) => {
-        console.log(data)
-    });
+      { responseType: "json" }
+    ).toPromise();
+  }
+  addDisease(disease: Diseases): any {
+    return this.http.post('http://www.clinicapi.somee.com/api/Diseases',
+      disease,
+      { responseType: "json" }
+    ).toPromise();
+  }
+  addDoctor(doctor: Doctors): any {
+    return this.http.post('http://www.clinicapi.somee.com/api/doctors',
+      doctor,
+      { responseType: "json" }
+    ).toPromise();
+  }
+  addVisit(visit: Visit): any {
+    return this.http.post('http://www.clinicapi.somee.com/api/Visits',
+        visit,
+      { responseType: "json" }
+    ).toPromise();
+  }
+  loginAdmin(username:String,password:String): any {
+    return this.http.post('http://www.clinicapi.somee.com/api/Admins/Login',
+      {
+        "username":username,
+        "password":password
+      },
+      { responseType: "json" }
+    ).toPromise();
+  }
+  loginDoctor(username:String,password:String): any {
+    return this.http.post('http://www.clinicapi.somee.com/api/Clinics/Login',
+      {
+        "username":username,
+        "password":password
+      },
+      { responseType: "json" }
+    ).toPromise();
   }
   //   getTraders(): Observable<any> {
   //     return this.http

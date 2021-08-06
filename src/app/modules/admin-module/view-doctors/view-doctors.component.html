@@ -13,33 +13,33 @@
         <!-- Position Column -->
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef class="bg-primary" style="color: white;"> No. </th>
-            <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.drId}} </td>
+            <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.DrId}} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="doctorName">
             <th mat-header-cell *matHeaderCellDef style="background-color: rgb(145, 172, 207); color: white;"> Doctor Name </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.drName}} </td>
+            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.DrName}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="doctorSpeciality">
             <th mat-header-cell *matHeaderCellDef  class="bg-primary" style="color: white;"> Doctor Speciality </th>
-            <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.drSpeciality}} </td>
+            <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.DrSpeciality}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="doctorUserName">
             <th mat-header-cell *matHeaderCellDef style="background-color: rgb(145, 172, 207); color: white;"> Doctor Username </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.drUserName}} </td>
+            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.DrUserName}} </td>
         </ng-container>
         <ng-container matColumnDef="doctorPassword">
             <th mat-header-cell *matHeaderCellDef class="bg-primary" style="color: white;"> Doctore Password </th>
-            <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.drPassword}} </td>
+            <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.DrPassword}} </td>
         </ng-container>
         <ng-container matColumnDef="clinic">
             <th mat-header-cell *matHeaderCellDef style="background-color: rgb(145, 172, 207); color: white;"> Doctor Clinic </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.clinic}} </td>
+            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.Clinic}} </td>
         </ng-container>
         <ng-container matColumnDef="details">
             <th mat-header-cell *matHeaderCellDef> Details </th>
@@ -49,24 +49,14 @@
               </button>
             </td>
           </ng-container>
-          <ng-container matColumnDef="update">
-              <th mat-header-cell *matHeaderCellDef> Update </th>
-              <td mat-cell *matCellDef="let element">
-                <button mat-icon-button color="accent">
-                    <mat-icon class="mat-18">system_update</mat-icon>
-                </button>
-              </td>
-            </ng-container>
-            <ng-container matColumnDef="delete">
-                <th mat-header-cell *matHeaderCellDef> Delete </th>
-                <td mat-cell *matCellDef="let element">
-                  <button mat-icon-button color="warn">
-                      <mat-icon class="mat-18">delete</mat-icon>
-                  </button>
-                </td>
-              </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[15, 15, 15]" showFirstLastButtons></mat-paginator>
+    <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+        <mat-progress-spinner 
+          color="primary" 
+          mode="indeterminate">
+        </mat-progress-spinner>
+      </mat-card>
+    <mat-paginator [pageSizeOptions]="[10, 20, 35]" showFirstLastButtons></mat-paginator>
 </div>

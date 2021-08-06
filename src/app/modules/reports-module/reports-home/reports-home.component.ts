@@ -7,16 +7,15 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./reports-home.component.css']
 })
 export class ReportsHomeComponent implements OnInit {
-  public showMe = false;
-  gLink: any = 'https://google.com';
-
+  public patiensShow = false;
+  public surgeriesShow = false;
+  public doctorsShow = false;
+  public clinicsShow = false;
+  public visitsShow = false;
+  public covid19Show = false;
 
   constructor(public sanitizer: DomSanitizer) { 
   }
-
   ngOnInit(): void {
-  }
-  getLink(){
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.gLink);
   }
 }

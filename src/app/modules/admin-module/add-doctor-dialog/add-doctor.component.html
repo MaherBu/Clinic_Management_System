@@ -1,1 +1,30 @@
-<p>add-doctor works!</p>
+<mat-dialog-content class="matDialog">
+    <h2>Add Doctor</h2>
+    <mat-divider></mat-divider>
+    <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
+        <div class="row">
+            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                    <div class="row tm-edit-product-row">
+                        <div class="col-xl col-lg col-md">
+                            <div class="form-group mb-3">
+                                <label for="name">Doctor Name
+                                </label>
+                                <input [(ngModel)]="data.DrName" id="DrName" name="DrName" type="text" class="form-control validate">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="name">Doctor Spetiality
+                                </label>
+                                <input [(ngModel)]="data.DrSpeciality" id="DrSpeciality" name="DrSpeciality" type="text" class="form-control validate">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button (click)="addDoctor()" type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
+                                Doctor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

@@ -1,106 +1,106 @@
 <!-- <mat-dialog-container> -->
-<mat-dialog-content class="matDialog">
-    <h2>Add Visit</h2>
-    <mat-divider></mat-divider>
-    <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
-        <div class="row">
-            <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
-                <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
-                    <div class="row tm-edit-product-row">
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <div class="form-group mb-3">
-                                <label for="name">Length
-                                </label>
-                                <input id="patientFirstName" name="patientFirstName" type="text"
-                                    class="form-control validate" required="">
+    <mat-dialog-content class="matDialog">
+        <h2>Add Visit</h2>
+        <mat-divider></mat-divider>
+        <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+                    <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                        <div class="row tm-edit-product-row">
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <div class="form-group mb-3">
+                                    <label for="name">Length
+                                    </label>
+                                    <input id="patientFirstName" name="patientFirstName" type="text"
+                                        class="form-control validate" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="name">Width
+                                    </label>
+                                    <input id="patientMiddleName" name="patientMiddleName" type="text"
+                                        class="form-control validate" required="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="expire_date">Date of Visit
+                                    </label>
+                                    <input id="expire_date" name="expire_date" type="date"
+                                        class="form-control validate hasDatepicker" data-large-mode="true">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="name">Price Of Visit
+                                    </label>
+                                    <input id="patientPhoneNumber" name="patientPhoneNumber" type="number"
+                                        class="form-control validate" placeholder="0.0">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="description">Notes</label>
+                                    <textarea class="form-control validate" rows="3" required=""></textarea>
+                                </div>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="name">Width
-                                </label>
-                                <input id="patientMiddleName" name="patientMiddleName" type="text"
-                                    class="form-control validate" required="">
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <form action="" class="tm-edit-product-form">
+                                    <div class="form-group mb-3">
+                                        <label for="category">Doctor</label>
+                                        <select class="custom-select tm-select-accounts" id="category">
+                                            <option *ngFor="let test of doctors$ | async" [value]="test.drId" value="1">{{test.DrName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="category">Clinic Center</label>
+                                        <select class="custom-select tm-select-accounts" id="category">
+                                            <option *ngFor="let test of clinics$ | async" [value]="test.drId" value="1">{{test.UserName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="category">Disease</label>
+                                        <select class="custom-select tm-select-accounts" id="category">
+                                            <option *ngFor="let test of diseases$ | async" [value]="test.drId" value="1">{{test.DiseaseName}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="category">Smoking</label>
+                                        <select class="form-control" ng-options="(item?'yes':'no') for item in [true, false]">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="category">Scheduled</label>
+                                        <select class="custom-select tm-select-accounts" id="category">
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+                                    <!-- <div class="form-group mb-3">
+                              <label for="name">Patient Disease
+                              </label>
+                              <input id="name" name="name" type="text" class="form-control validate" required="">
+                            </div> -->
+    
+                                    
+                                </form>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="expire_date">Date of Visit
-                                </label>
-                                <input id="expire_date" name="expire_date" type="date"
-                                    class="form-control validate hasDatepicker" data-large-mode="true">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="name">Price Of Visit
-                                </label>
-                                <input id="patientPhoneNumber" name="patientPhoneNumber" type="number"
-                                    class="form-control validate" placeholder="0.0">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="description">Notes</label>
-                                <textarea class="form-control validate" rows="3" required=""></textarea>
-                            </div>
+                            <!-- <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+                        <div class="tm-product-img-dummy mx-auto">
+                          <i class="fas fa-cloud-upload-alt tm-upload-icon" onclick="document.getElementById('fileInput').click();"></i>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12">
-                            <form action="" class="tm-edit-product-form">
-                                <div class="form-group mb-3">
-                                    <label for="category">Doctor</label>
-                                    <select class="custom-select tm-select-accounts" id="category">
-                                        <option *ngFor="let test of doctors$ | async" [value]="test.drId" value="1">{{test.drName}}</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="category">Clinic Center</label>
-                                    <select class="custom-select tm-select-accounts" id="category">
-                                        <option *ngFor="let test of clinics$ | async" [value]="test.drId" value="1">{{test.drName}}</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="category">Disease</label>
-                                    <select class="custom-select tm-select-accounts" id="category">
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="category">Smoking</label>
-                                    <select class="custom-select tm-select-accounts" id="category">
-                                        <option *ngFor="let test of diseases$ | async" [value]="test.drId" value="1">{{test.diseaseName}}</option>
-                                    </select>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="category">Scheduled</label>
-                                    <select class="custom-select tm-select-accounts" id="category">
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                    </select>
-                                </div>
-                                <!-- <div class="form-group mb-3">
-                          <label for="name">Patient Disease
-                          </label>
-                          <input id="name" name="name" type="text" class="form-control validate" required="">
-                        </div> -->
-
-                                
-                            </form>
+                        <div class="custom-file mt-3 mb-3">
+                          <input id="fileInput" type="file" style="display:none;">
+                          <input type="button" class="btn btn-primary btn-block mx-auto" value="Choose images" onclick="document.getElementById('fileInput').click();">
                         </div>
-                        <!-- <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                    <div class="tm-product-img-dummy mx-auto">
-                      <i class="fas fa-cloud-upload-alt tm-upload-icon" onclick="document.getElementById('fileInput').click();"></i>
-                    </div>
-                    <div class="custom-file mt-3 mb-3">
-                      <input id="fileInput" type="file" style="display:none;">
-                      <input type="button" class="btn btn-primary btn-block mx-auto" value="Choose images" onclick="document.getElementById('fileInput').click();">
-                    </div>
-                  </div> -->
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
-                                Visit</button>
+                      </div> -->
+                            <div class="col-12">
+                                <button (click)="addVisit()" type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
+                                    Visit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+    
             </div>
-
         </div>
-    </div>
-</mat-dialog-content>
-<!-- </mat-dialog-container> -->
-<!-- <div mat-dialog-actions>
-    <button class="btn btn-success" mat-raised-button type="submit">Update</button>
-</div> -->
+    </mat-dialog-content>
+    <!-- </mat-dialog-container> -->
+    <!-- <div mat-dialog-actions>
+        <button class="btn btn-success" mat-raised-button type="submit">Update</button>
+    </div> -->

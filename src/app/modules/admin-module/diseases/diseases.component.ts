@@ -1,3 +1,4 @@
+import { AddDiseaseDialogComponent } from './../add-disease-dialog/add-disease-dialog.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
@@ -40,6 +41,11 @@ export class DiseasesComponent implements OnInit {
     const editDialogRef = this.dialog.open(DiseaseDetailsDialogComponent, {
       data: data
     });
+  }
+
+  openAddDiseaseDialog(event): void {
+    event.stopPropagation();
+    const editDialogRef = this.dialog.open(AddDiseaseDialogComponent);
   }
 
 }

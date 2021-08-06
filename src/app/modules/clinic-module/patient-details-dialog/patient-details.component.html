@@ -1,6 +1,8 @@
-<!-- <mat-dialog-container> -->
+<div mat-dialog-title>
+    <button mat-raised-button class="btn btn-primary" style="float: right;">Show Patient Visits</button>
+    <h2 style="float: left;">Patient Details</h2>
+</div>
 <mat-dialog-content class="matDialog">
-    <h2>Patient Details</h2>
     <mat-divider></mat-divider>
     <div class="container tm-mt-big tm-mb-big" style="padding: 10px;">
         <div class="row">
@@ -11,49 +13,46 @@
                             <div class="form-group mb-3">
                                 <label for="name">Patient Fullname
                                 </label>
-                                <input [(ngModel)]="item.patientFullName" id="patientFullName"
+                                <input [(ngModel)]="data.PatientFullName" id="patientFullName"
                                     placeholder="item.patientFullName" name="patientFullName" type="text"
                                     class="form-control validate" readonly="readonly">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="name">Phone Number
                                 </label>
-                                <input [(ngModel)]="data.patientPhoneNumber" id="patientPhoneNumber"
+                                <input [(ngModel)]="data.PatientPhoneNumber" id="patientPhoneNumber"
                                     placeholder="data.patientPhoneNumber" name="patientPhoneNumber" type="text"
                                     class="form-control validate" readonly="readonly">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="name">Gender
                                 </label>
-                                <input [(ngModel)]="data.gender" id="gender" placeholder="data.gender" name="gender"
+                                <input [(ngModel)]="data.Gender" id="gender" placeholder="data.gender" name="gender"
                                     type="text" class="form-control validate" readonly="readonly">
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="expire_date">Date of Birth
-                                </label>
-                                <input [(ngModel)]="data.patientBirhdate" id="expire_date" name="expire_date"
-                                    placeholder="data.patientBirhdate" type="date"
-                                    class="form-control validate hasDatepicker" data-large-mode="true" readonly="readonly">
-                            </div>
+
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <form action="" class="tm-edit-product-form">
                                 <div class="form-group mb-3">
                                     <label for="name">Identity Number
                                     </label>
-                                    <input [(ngModel)]="data.identityNumber" id="identityNumber"
+                                    <input [(ngModel)]="data.IdentityNumber" id="identityNumber"
                                         placeholder="data.identityNumber" name="identityNumber" type="text"
                                         class="form-control validate" readonly="readonly">
                                 </div>
-                                <!-- <div class="form-group mb-3">
-                          <label for="name">Patient Disease
-                          </label>
-                          <input id="name" name="name" type="text" class="form-control validate" required="">
-                        </div> -->
+                                <div class="form-group mb-3">
+                                    <label for="expire_date">Date of Birth
+                                    </label>
+                                    <input [(ngModel)]="data.PatientBirhdate" id="expire_date" name="expire_date"
+                                        placeholder="data.patientBirhdate" type="date"
+                                        class="form-control validate hasDatepicker" data-large-mode="true"
+                                        readonly="readonly">
+                                </div>
                                 <div class="form-group mb-3">
                                     <label for="name">Notes
                                     </label>
-                                    <input [(ngModel)]="data.note" id="note" placeholder="data.note" name="note"
+                                    <input [(ngModel)]="data.Note" id="note" placeholder="data.note" name="note"
                                         type="text" class="form-control validate" readonly="readonly">
                                 </div>
                             </form>

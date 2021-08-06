@@ -1,30 +1,56 @@
 <div class="row bgDiv">
     <div class="col-sm">
         <div style="float: left;padding: 10%;">
-            <div *ngIf="showMe">
-                <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiN2M2YTUwODUtOGZjOC00YzJjLWFjYjUtMTk0MTk5NWYyNDBiIiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9&pageName=ReportSection5b25f3922702b4c0cb65"
+            <div *ngIf="patiensShow">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiMjU2ZjI2OTMtM2EzYi00NTY5LTk3NWEtMDAyOTc0MDVlNjRiIiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div *ngIf="doctorsShow">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiM2NkNTAwZmUtMzZmYi00MWNiLWJmZTctNjY4MDJjMDJjZDQ0IiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div *ngIf="surgeriesShow">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiNjQ3MTVlMDMtZjg1Zi00NDI3LWJjNTctOTFjMGRiZmY3NzE0IiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div *ngIf="clinicsShow">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiNmM0OGQxNWMtYmI2Yy00ZDZiLTg4MTQtM2RkZGM5NjQ4OTk5IiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div *ngIf="visitsShow">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZjdkMzY5MjItMGFmNy00N2UxLTk0ODQtYjBlZGI1NGUwNjE1IiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div *ngIf="covid19Show">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiNjM1MGZkYzEtYTEwNi00M2I3LTlmNzQtNjc4MTYwZDM5NzI3IiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
                  frameborder="0" allowFullScreen="true"></iframe>
             </div>
         </div>
     </div>
     <div class="col-sm">
         <div style="float: right; padding: 15%;">
-            <button (click)="showMe =! showMe" type="button" class="btn btn-outline-success"
+            <button (click)="patiensShow =! patiensShow" type="button" class="btn btn-outline-success"
                 style="width: 250px; float: right; margin-bottom: 20px;">Patients</button>
 
-            <button type="button" class="btn btn-outline-success"
+            <button (click)="doctorsShow =! doctorsShow" type="button" class="btn btn-outline-success"
                 style="width: 250px; float: right; margin-bottom: 20px;">Doctors</button>
 
-            <button type="button" class="btn btn-outline-success"
-                style="width: 250px; float: right; margin-bottom: 20px;">Diseases</button>
+            <button (click)="surgeriesShow =! surgeriesShow" type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Surgeries</button>
 
-            <button type="button" class="btn btn-outline-success"
+            <button (click)="clinicsShow =! clinicsShow" type="button" class="btn btn-outline-success"
                 style="width: 250px; float: right; margin-bottom: 20px;">Clinics</button>
 
-            <button type="button" class="btn btn-outline-success"
+            <button (click)="visitsShow =! visitsShow" type="button" class="btn btn-outline-success"
                 style="width: 250px; float: right; margin-bottom: 20px;">Visits</button>
 
-            <button type="button" class="btn btn-outline-danger"
+            <button (click)="covid19Show =! covid19Show" type="button" class="btn btn-outline-danger"
                 style="width: 250px; float: right; margin-bottom: 20px;">Covid-19</button>
         </div>
     </div>

@@ -21,6 +21,8 @@ import { AddClinicDialogComponent } from './add-clinic-dialog/add-clinic-dialog.
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -32,12 +34,15 @@ import { FormsModule } from '@angular/forms';
     ChartsModule,
     AdminModuleRoutingModule,
     MatTableModule,
+    MatCardModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
     MatDividerModule,
-    MatDialogModule 
+    MatDialogModule,
+    MatDividerModule
   ],
   exports: [
     AdminModuleComponent,
@@ -47,6 +52,7 @@ import { FormsModule } from '@angular/forms';
     DiseaseDetailsDialogComponent,
     AddDoctorComponent,
     AddClinicDialogComponent,
+    AddDiseaseDialogComponent,
   ]
 })
 export class AdminModuleModule { }

@@ -1,9 +1,9 @@
 export class Patient{
-    patientId?: number;
-    patientFullName?: String;
-    patientBirhdate?:String;
-    identityNumber?: String;
-    note?: String;
-    gender?:String;
-    patientPhoneNumber?:String;
+    PatientId?: number;
+    PatientFullName?: String;
+    PatientBirhdate?:String;
+    IdentityNumber?: String;
+    Note?: String;
+    Gender?:String;
+    PatientPhoneNumber?:String;
 }

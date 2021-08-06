@@ -12,49 +12,42 @@
             <div class="form-group mb-3">
               <label for="name">Patient Fullname
               </label>
-              <input [(ngModel)]="data.patientFullName" id="patientFullName" name="patientFullName" type="text"
-                class="form-control validate" required="">
+              <input [(ngModel)]="data.PatientFullName" id="patientFullName" name="patientFullName" type="text"
+                class="form-control validate" matInput required>
             </div>
             <div class="form-group mb-3">
               <label for="name">Phone Number
               </label>
-              <input [(ngModel)]="data.patientPhoneNumber" id="patientPhoneNumber" name="patientPhoneNumber" type="text"
-                class="form-control validate" required="">
+              <input [(ngModel)]="data.PatientPhoneNumber" id="patientPhoneNumber" name="patientPhoneNumber" type="number"
+                class="form-control validate" matInput required>
             </div>
             <div class="form-group mb-3">
               <label for="category">Gender</label>
-              <select class="custom-select tm-select-accounts" id="category">
-                <option value="1">Male</option>
-                <option value="2">Female</option>
+              <select (change)="selectChangeHandler($event)" class="custom-select tm-select-accounts" id="category">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
               </select>
             </div>
           </div>
           <div class="col-xl-6 col-lg-6 col-md-12">
-            <form>
-              <!-- <div class="form-group mb-3">
-                    <label for="name">Patient Disease
-                    </label>
-                    <input id="name" name="name" type="text" class="form-control validate" required="">
-                  </div> -->
               <div class="form-group mb-3">
                 <label for="name">Identity Number
                 </label>
-                <input [(ngModel)]="data.identityNumber" id="identityNumber" name="identityNumber" type="number"
-                  class="form-control validate" required="">
+                <input [(ngModel)]="data.IdentityNumber" id="identityNumber" name="identityNumber" type="number"
+                  class="form-control validate" matInput required>
               </div>
               <div class="form-group mb-3">
                 <label for="expire_date">Date of Birth
                 </label>
-                <input [(ngModel)]="data.patientBirhdate" id="expire_date" name="expire_date" type="date"
-                  class="form-control validate hasDatepicker" data-large-mode="true">
+                <input [(ngModel)]="data.PatientBirhdate" id="expire_date" name="expire_date" type="date"
+                  class="form-control validate hasDatepicker" data-large-mode="true" matInput required>
               </div>
               <div class="form-group mb-3">
                 <label for="name">Notes
                 </label>
-                <input [(ngModel)]="data.note" id="note" name="note" type="text" class="form-control validate"
-                  required="">
+                <input [(ngModel)]="data.Note" id="note" name="note" type="text" class="form-control validate"
+                matInput required>
               </div>
-            </form>
           </div>
           <!-- <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
               <div class="tm-product-img-dummy mx-auto">
@@ -66,7 +59,7 @@
               </div>
             </div> -->
           <div class="col-12">
-            <button (click)="addPatient(data)" type="submit" class="btn btn-primary btn-block"
+            <button (click)="addPatient()" type="submit" class="btn btn-primary btn-block"
               style="margin-bottom: 10%;">Add Pateint</button>
           </div>
         </div>

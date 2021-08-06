@@ -12,39 +12,35 @@ export class AddPatientsComponent implements OnInit {
 
   data = new Patient();
   stringifiedData: any;
-  parsedJson: any;
-
+  selectedGender: string = 'Male';
   constructor(private ds: DataService) { }
 
   ngOnInit(): void {
     this.data = {
-      gender: 'Male',
-      identityNumber: '',
-      patientBirhdate: '',
-      patientFullName: '',
-      patientPhoneNumber: '',
-      note: ''
+      Gender: this.selectedGender,
+      PatientFullName: '',
+      PatientBirhdate: '',
+      PatientPhoneNumber: '',
+      IdentityNumber:'',
+      Note:''
     }
-
   }
-
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.selectedGender = event.target.value;
+    // this.data.gender = this.selectedGender;
+  }
   addPatient() {
-    // this.stringifiedData = JSON.stringify({data});  
-    this.ds.addPatients(this.data).toPromise()
+    this.ds.addPatients(this.data)
     .then(
-      (x: Patient) => {
+      (x)=> {
         console.log(x);
-        // this.dialogRef.close(x);
       }
     )
-    // this.ds.addPatients(this.stringifiedData).subscribe(
-    //   (x) => {
-    //     console.log(x);
-    //   }
-    // );
-    // console.log(this.data);
-    // console.log("With Stringify :" , this.stringifiedData); 
-    // this.parsedJson = JSON.parse(this.stringifiedData);  
-    // console.log("With Parsed JSON :" , this.parsedJson);
+    .catch(
+      (x)=>{
+        console.log(x);
+      }
+    )
   }
 }

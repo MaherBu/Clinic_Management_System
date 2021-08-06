@@ -1,4 +1,4 @@
 export class Diseases{
-    diseaseId?:number;
-    diseaseName?:String;
+    DiseaseId?:number;
+    DiseaseName?:String;
 }

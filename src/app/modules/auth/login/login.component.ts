@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from 'src/app/services/data-service';
 
 @Component({
   selector: 'app-login',
@@ -7,26 +8,33 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  username: String;
+  password: String;
 
-  constructor(public route: ActivatedRoute, private router: Router) { }
-  
+  constructor(public route: ActivatedRoute, private router: Router, private ds: DataService) { }
+
   ngOnInit(): void {
   }
 
 
-  login(){
-    var user = ((document.getElementById("username") as HTMLInputElement).value);
-    var pass = ((document.getElementById("password") as HTMLInputElement).value);
-
-    if(user == "admin" && pass == "admin"){
-      this.router.navigate(['/admin']);
-    }
-    else if(user == "re" && pass == "re"){
-      this.router.navigate(['/reports']);
-    }
-    else{
-      this.router.navigate(['/clinic']);
-    }
+  login() {
+    this.ds.loginDoctor(this.username, this.password)
+      .then(
+        (x) => {
+          if (x != 0) {
+            this.router.navigate(['/clinic']);
+            localStorage.setItem("clinicId",x.toString());
+            console.log(x);
+          }
+        }
+      ).catch(
+        (x) => {
+          console.log(x);
+        }
+      )
+    // else{
+    //   this.router.navigate(['/clinic']);
+    // }
   }
 
 }

@@ -15,17 +15,20 @@ import { AddDoctorComponent } from '../add-doctor-dialog/add-doctor.component';
 export class ViewDoctorsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'doctorName', 'doctorSpeciality', 'doctorUserName','doctorPassword','clinic',];
   dataSource:any;
+  isLoading = true;
 
   constructor(private ds: DataService,private dialog: MatDialog) { }
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.ds.getAllDoctors().subscribe(
       (x: Doctors[]) => {
+        this.isLoading = false;
         this.dataSource = new MatTableDataSource(x);
         this.dataSource.paginator = this.paginator;
-      });
+      }, error => this.isLoading = false);
   }
 
   applyFilter(filterValue: string) {

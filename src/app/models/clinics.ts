@@ -1,13 +1,13 @@
 export class Clinic{
-    clinicId?:number;
-    userName?:String;
-    password?:String;
-    clinicOpeningDate?:String;
-    clinicClosingDate?:String;
-    region?:String;
-    adminClinics?: [];
-    doctors?: [];
-    surgeries?: [];
-    surgeryVisits?: [];
-    visits?: [];
+    ClinicId?:number;
+    UserName?:String;
+    Password?:String;
+    ClinicOpeningDate?:String;
+    ClinicClosingDate?:String;
+    Region?:String;
+    AdminClinics?: [];
+    Doctors?: [];
+    Surgeries?: [];
+    SurgeryVisits?: [];
+    Visits?: [];
 }

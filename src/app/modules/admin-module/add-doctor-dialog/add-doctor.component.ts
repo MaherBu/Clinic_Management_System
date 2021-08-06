@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { Doctors } from 'src/app/models/doctors';
+import { DataService } from 'src/app/services/data-service';
 
 @Component({
   selector: 'app-add-doctor',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDoctorComponent implements OnInit {
 
-  constructor() { }
+  data = new Doctors();
+  constructor(
+    private dialogRef: MatDialogRef<AddDoctorComponent>,
+    // @Inject(MAT_DIALOG_DATA) public data: Doctors,
+    private ds: DataService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+    
   }
-
+  addDoctor(){
+    this.ds.addDoctor(this.data)
+    .then(
+      (x)=> {
+        console.log(x);
+        this.dialogRef.close();
+      }
+    )
+    .catch(
+      (x)=>{
+        console.log(x);
+      }
+    )
+  }
 }

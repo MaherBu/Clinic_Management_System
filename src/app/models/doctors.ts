@@ -1,9 +1,7 @@
 export class Doctors{
-    drId?:number;
-    clinicId?:number;
-    drName?:String;
-    drSpeciality?:String;
-    drUserName?:String;
-    drPassword?:String;
-    clinic?:String;
+    DrId?:number;
+    ClinicId?:number;
+    DrName?:String;
+    DrSpeciality?:String;
+    Clinic?:String;
 }

@@ -17,13 +17,15 @@ export class PatientsComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'fullName', 'birth', 'phoneNum','identityNum','notes'];
   dataSource: any;
   isLoading = true;
+  clinicId:String;
 
   constructor(private ds: DataService, private router: Router, private dialog: MatDialog) { }
   @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
     this.isLoading = true;
-    this.ds.getAllPatients().subscribe(
+    this.clinicId = localStorage.getItem("clinicId");
+    this.ds.getAllPatients(this.clinicId).subscribe(
       (x: Patient[]) => {
         this.isLoading = false;
         this.dataSource = new MatTableDataSource(x);
