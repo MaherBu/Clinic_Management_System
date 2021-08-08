@@ -1,5 +1,7 @@
+import { Visit } from './../../../models/visit';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Patient } from 'src/app/models/patient-model';
 import { DataService } from 'src/app/services/data-service';
 
@@ -17,8 +19,9 @@ export class AddVisitDialogComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<AddVisitDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Patient,
-    private ds: DataService
+    @Inject(MAT_DIALOG_DATA) public data: Visit,
+    private ds: DataService,
+    private _snackBar: MatSnackBar
   ) { }
 
   getDoctors(): any {
@@ -35,18 +38,39 @@ export class AddVisitDialogComponent implements OnInit {
     this.doctors$ = this.getDoctors();
     this.clinics$ = this.getClinics();
     this.diseases$ = this.getDisease();
+    this.data = {
+      PatientId: this.data.PatientId,
+      ClinicId : this.data.ClinicId,
+      DrId: this.doctors$,
+      DiseaseId : this.diseases$,
+      ClinicName: '',
+      DiseaseName: '',
+      DrName: '',
+      Length: 0,
+      Note: '',
+      Price: 0,
+      PatientFullName: '',
+      Scheduled: false,
+      Smoking: true,
+      VisitDate: '',
+      Wieght: 0
+    }
   }
 
   addVisit(){
+    
     this.ds.addVisit(this.data)
     .then(
       (x)=> {
         console.log(x);
+        this.dialogRef.close();
+        this._snackBar.open("Patient Visit Added Successfully");
       }
     )
     .catch(
       (x)=>{
         console.log(x);
+        this.dialogRef.close();
       }
     )  
   }

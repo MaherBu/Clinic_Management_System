@@ -1,3 +1,4 @@
+import { ReportsHomeComponent } from './../reports-module/reports-home/reports-home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddDoctorComponent } from './add-doctor-dialog/add-doctor.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
         path:'',
         pathMatch: 'full',
         redirectTo: 'app-admin-dashboard',
+      },
+      {
+        path: 'reports',
+        component: ReportsHomeComponent
       },
       {
         path: 'app-admin-dashboard',

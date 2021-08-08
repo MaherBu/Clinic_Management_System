@@ -4,6 +4,10 @@ export interface Visit{
     ClinicId?:number;
     DiseaseId?:number;
     DrId?:number;
+    PatientFullName?:String;
+    ClinicName?:String;
+    DiseaseName?:String;
+    DrName?:String;
     VisitDate?:String;
     Scheduled?:boolean;
     Price?:number;

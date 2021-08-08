@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <div class="card bg-primary">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+            <ng-container matColumnDef="VisitId">
+                <th mat-header-cell *matHeaderCellDef class="bg-primary" style="color: white;"> No. </th>
+                <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.VisitId}} </td>
+            </ng-container>
+            <ng-container matColumnDef="PatientFullName">
+                <th mat-header-cell *matHeaderCellDef style="background-color: rgb(145, 172, 207); color: white;"> Patient Name </th>
+                <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.PatientFullName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="DrName">
+              <th mat-header-cell *matHeaderCellDef class="bg-primary" style="color: white;"> Doctor Name </th>
+              <td mat-cell *matCellDef="let element" style="background-color: aliceblue; text-align: center !important;"> {{element.DrName}} </td>
+          </ng-container>
+          <ng-container matColumnDef="VisitDate">
+            <th mat-header-cell *matHeaderCellDef style="background-color: rgb(145, 172, 207); color: white;"> Visit Date </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center !important;"> {{element.VisitDate}} </td>
+        </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row, $event)"></tr>
+        </table>
+        <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+            <mat-progress-spinner 
+              color="primary" 
+              mode="indeterminate">
+            </mat-progress-spinner>
+          </mat-card>
+    </div>

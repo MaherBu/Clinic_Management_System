@@ -31,6 +31,16 @@
                 src="https://app.powerbi.com/view?r=eyJrIjoiNjM1MGZkYzEtYTEwNi00M2I3LTlmNzQtNjc4MTYwZDM5NzI3IiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
                  frameborder="0" allowFullScreen="true"></iframe>
             </div>
+            <div *ngIf="yearlyNumOfVisit">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZmM2NjQ1YmUtMzc0Zi00MDkxLThiNjYtMDFkOTkwMmRmNzVhIiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+            <div *ngIf="casesClusters">
+                <iframe width="600" height="373.5" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiZWU2ZGJhYWQtZWJjNy00YjU1LTk2Y2QtMWIyNDExNzJjZDNmIiwidCI6IjExNmE1NDE0LTc5MDEtNDBlNS1hZDk1LTM0MjBlYzA3NDY1NyIsImMiOjl9"
+                 frameborder="0" allowFullScreen="true"></iframe>
+            </div>
         </div>
     </div>
     <div class="col-sm">
@@ -49,6 +59,12 @@
 
             <button (click)="visitsShow =! visitsShow" type="button" class="btn btn-outline-success"
                 style="width: 250px; float: right; margin-bottom: 20px;">Visits</button>
+                
+            <button (click)="yearlyNumOfVisit =! yearlyNumOfVisit" type="button" class="btn btn-outline-success"
+                style="width: 250px; float: right; margin-bottom: 20px;">Yearly Number of Visits</button>
+
+            <button (click)="casesClusters =! casesClusters" type="button" class="btn btn-outline-danger"
+                style="width: 250px; float: right; margin-bottom: 20px;">Cases Clusters</button>
 
             <button (click)="covid19Show =! covid19Show" type="button" class="btn btn-outline-danger"
                 style="width: 250px; float: right; margin-bottom: 20px;">Covid-19</button>

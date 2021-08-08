@@ -5,6 +5,7 @@ import { Patient } from 'src/app/models/patient-model';
 import { DataService } from 'src/app/services/data-service';
 import { AddSurgeryVisitDialogComponent } from '../add-surgery-visit-dialog/add-surgery-visit-dialog.component';
 import { AddVisitDialogComponent } from '../add-visit-dialog/add-visit-dialog.component';
+import { PatientVisitDialogComponent } from '../patient-visit-dialog/patient-visit-dialog.component';
 
 @Component({
   selector: 'app-patient-details',
@@ -38,6 +39,14 @@ export class PatientDetailsComponent implements OnInit {
     this.dialogRef.close();
     event.stopPropagation();
     const editDialogRef = this.dialog.open(AddSurgeryVisitDialogComponent, {
+      data: data
+    });
+  }
+  
+  openDialogPatientVisit(data, event): void {
+    this.dialogRef.close();
+    event.stopPropagation();
+    const editDialogRef = this.dialog.open(PatientVisitDialogComponent, {
       data: data
     });
   }

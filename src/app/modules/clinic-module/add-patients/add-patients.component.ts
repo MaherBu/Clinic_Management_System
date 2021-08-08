@@ -1,6 +1,10 @@
+import { Router } from '@angular/router';
+import { SuccessDialogComponent } from './../../components/success-dialog/success-dialog.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Patient } from 'src/app/models/patient-model';
 import { DataService } from 'src/app/services/data-service';
+import { PatientDetailsComponent } from '../patient-details-dialog/patient-details.component';
 
 
 @Component({
@@ -13,7 +17,7 @@ export class AddPatientsComponent implements OnInit {
   data = new Patient();
   stringifiedData: any;
   selectedGender: string = 'Male';
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService,private dialog: MatDialog,private router: Router) { }
 
   ngOnInit(): void {
     this.data = {
@@ -35,6 +39,10 @@ export class AddPatientsComponent implements OnInit {
     .then(
       (x)=> {
         console.log(x);
+        // this.router.navigateByUrl['patients'],
+        this.dialog.open(SuccessDialogComponent, {
+          data: x
+        })
       }
     )
     .catch(

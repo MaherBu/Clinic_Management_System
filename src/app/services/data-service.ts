@@ -46,7 +46,10 @@ export class DataService {
     return this.http
       .get('http://www.clinicapi.somee.com/api/Clinics/ClinicPatients/?ClinicId=' + clinicId);
   }
-
+  getPatientVisits(patientId:String): Observable<any> {
+    return this.http
+      .get('http://www.clinicapi.somee.com/api/Visits/PatientVisit/?PatientId=' + patientId);
+  }
   getAllDoctors(): Observable<any> {
     return this.http
       .get('http://clinicapi.somee.com/api/doctors');

@@ -12,7 +12,9 @@ export class ReportsHomeComponent implements OnInit {
   public doctorsShow = false;
   public clinicsShow = false;
   public visitsShow = false;
+  public yearlyNumOfVisit = false;
   public covid19Show = false;
+  public casesClusters = false;
 
   constructor(public sanitizer: DomSanitizer) { 
   }

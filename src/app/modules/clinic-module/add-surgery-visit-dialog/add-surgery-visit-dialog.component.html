@@ -12,22 +12,19 @@
                                     <div class="form-group mb-3">
                                         <label for="category">Doctor</label>
                                         <select class="custom-select tm-select-accounts" id="category">
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                            <option *ngFor="let test of doctors$ | async" [value]="test.drId" value="1">{{test.DrName}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="category">Clinic Center</label>
                                         <select class="custom-select tm-select-accounts" id="category">
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                            <option *ngFor="let test of clinics$ | async" [value]="test.drId" value="1">{{test.UserName}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="category">Surgery Type</label>
                                         <select class="custom-select tm-select-accounts" id="category">
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
+                                            <option *ngFor="let test of surgeryType$ | async" [value]="test.SurgeryId" value="1">{{test.SurgeryName}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-3">
@@ -53,7 +50,7 @@
                         </div>
                       </div> -->
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
+                                <button (click)="addSurgery()" type="submit" class="btn btn-primary btn-block" style="margin-bottom: 10%;">Add
                                     Visit</button>
                             </div>
                         </div>
